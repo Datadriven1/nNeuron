@@ -8,17 +8,32 @@ import os
 plt.style.use("fivethirtyeight") # THIS IS STYLE OF GRAPHS
 
 def prepare_data(df):
-  X = df.drop("y", axis=1)
+    """it is used to separate the dependent variables and independent features
 
-  y = df["y"]
+    Args:
+        df (pd.DataFrame): its the pandas DataFrame
 
-  return X, y
+    Returns:
+        tuple: its returns the tuples of dependent variables and independent variables
+    """
+    X = df.drop("y", axis=1)
+
+    y = df["y"]
+
+    return X, y
+
 
 def save_model(model, filename):
-  model_dir = "models"
-  os.makedirs(model_dir, exist_ok=True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
-  filePath = os.path.join(model_dir, filename) # model/filename
-  joblib.dump(model, filePath)  
+    """this saves the trained model     
+
+    Args:
+        model (python object): trained model
+        filename (str): path to save the trained model
+    """
+    model_dir = "models"
+    os.makedirs(model_dir, exist_ok=True) # ONLY CREATE IF MODEL_DIR DOESN"T EXISTS
+    filePath = os.path.join(model_dir, filename) # model/filename
+    joblib.dump(model, filePath)  
 
 
 def save_plot(df, file_name, model):
