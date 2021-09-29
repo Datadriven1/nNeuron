@@ -1,4 +1,5 @@
 # nNeuron
+nNeuron | perceptron 
 
 ```bash 
 git add . && git commit -m "docstring updated" && git push origin main
@@ -27,3 +28,18 @@ def main(data, modelName, plotName, eta, epochs):
     save_model(model, filename=modelName)
     save_plot(df, plotName, model)
 ```
+
+## dataset
+
+x1 | x2 | y
+-|-|-
+0|0|0
+0|1|0
+1|0|0
+1|1|1
+
+###
+* point 1
+* point 2
+
+1. point
